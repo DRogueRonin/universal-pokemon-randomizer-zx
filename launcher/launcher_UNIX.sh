@@ -2,8 +2,13 @@
 
 cd "$( dirname "$0" )"
 
-if ! command -v java > /dev/null 2>&1; then
-  echo "Java not installed."
+if ! type -p java > /dev/null 2>&1; then
+  echo "Java is not installed."
+  exit
+fi
+
+if [[ $(java --version) == *"32-Bit"* ]]; then
+  echo "Wrong Java version: Java 32-Bit instead of 64-Bit is installed."
   exit
 fi
 
