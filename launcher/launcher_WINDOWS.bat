@@ -9,7 +9,7 @@ if %errorlevel%==1 (
 )
 
 FOR /F "delims=" %i IN ('java -version') DO set java_version=%i
-if NOT "%java_version%"=="%java_version:32-Bit=%" (
+if "%java_version%"=="%java_version:64-Bit=%" (
     @echo Wrong Java version: Java 32-Bit instead of 64-Bit is installed.
     exit
 )

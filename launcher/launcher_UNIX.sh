@@ -7,7 +7,7 @@ if ! type -p java > /dev/null 2>&1; then
   exit
 fi
 
-if [[ $(java --version) == *"32-Bit"* ]]; then
+if [[ ! $(java --version) == *"64-Bit"* ]]; then
   echo "Wrong Java version: Java 32-Bit instead of 64-Bit is installed."
   exit
 fi
